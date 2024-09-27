@@ -3,3 +3,9 @@
     <a style="text-decoration: none;font-size: 25px;" href="{% url 'register' %}">Registration</a>
 </div>
 <hr>
+<div align="center">
+    <form action="">
+        {% csrf_token %}
+        <button>Login</button>
+    </form>
+</div>
