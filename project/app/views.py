@@ -11,10 +11,12 @@ def register(request):
         email=request.POST.get('email')
         contact=request.POST.get('contact')
         password=request.POST.get('password')
+        cpassword=request.POST.get('cpassword')
+        
+        print(name,email,contact,password,cpassword)
+        
 
-        Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
-        msg="DATA SUCCESSFULLY SUBMITED"
-        return render(request,'home.html',{'msg':msg})
+       
     else:
         return render(request,'register.html')
 

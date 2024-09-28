@@ -1,24 +1,28 @@
 <h1 align="center" style="margin: 10px; margin-top: 20px;">Registation Page</h1>
+<div align="center" style="margin: 20px;color: red;">
+            {{ msg }}
+        </div>
 <form align="center" style="margin: 10px;" action="{% url 'register' %}" method="post">
     {% csrf_token %}
     <div style="margin-bottom: 8px; margin-top: 20px;">
-        Name:<input type="text" name="name" />
+        Name:<input type="text" name="name" required />
     </div>
     
     <br>
     <div style="margin-bottom: 8px;">
-        Email:<input type="email" name="email" />
+        Email:<input type="email" name="email" required />
     </div>
     
     <br>
     <div style="margin-bottom: 8px;">
-        Contact:<input type="tel" name="contact" />
+        Contact:<input type="tel" name="contact" required />
     </div>
     
     <br>
     <div style="margin-bottom: 8px;">
-        Password:<input type="password" name="password" />
+        Password:<input type="password" name="password" required />
     </div>
     <br>
+    
     <button style="background-color: brown; color: white; font-size: 20px;" type="submit">Submit</button>
 </form>
