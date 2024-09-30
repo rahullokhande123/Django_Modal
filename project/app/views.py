@@ -16,7 +16,7 @@ def register(request):
             user=Student.objects.filter(stu_email=email)
             print(user)
             if user:
-               msg="Data Alrady Exist"
+               msg="Email Alrady Exist"
                return render(request,'register.html',{'msg':msg})
             else:
               Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
