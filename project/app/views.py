@@ -16,20 +16,23 @@ def register(request):
             user=Student.objects.filter(stu_email=email)
             print(user)
             if user:
-               msg="Email Alrady Exist"
-               return render(request,'register.html',{'msg':msg})
+                use_name=Student.objects.filter(stu_name=name)
+                if use_name:
+                    msg="Email ID and Name already exist"
+                    return render(request, 'register.html',{'msg':msg})
+                else:
+                    msg="Email id already exist please choose other 'email ID'"
+                    return render(request, 'register.html',{'msg':msg})
             else:
-              Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
-              msg="DATA SUCCESSFULLY SUBMITED"
-              return render(request,'login.html',{'msg':msg})
+                Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
+                msg="YOUR DATA SUCCESSFULLY RECORDED"
+                return render(request,'login.html',{'msg':msg})
         else:
             msg="Password not match"
             return render (request,"register.html",{'msg':msg})
 
         
         # user=Student.objects.get(stu_email=email)
-        
-
         # Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
         # msg="DATA SUCCESSFULLY SUBMITED"
         # return render(request,'home.html',{'msg':msg})
@@ -37,4 +40,33 @@ def register(request):
         return render(request,'register.html')
 
 def login(request):
-    return render(request,'login.html')
+    if request.method=="POST":
+        email=request.POST['email']
+        password=request.POST['password']
+        print(email,password)
+        use=Student.objects.filter(stu_email=email)
+        print(use)
+        if use:
+            use_data=Student.objects.get(stu_email=email)
+            print(use_data)
+            email1=use_data.stu_email
+            name1=use_data.stu_name
+            contact1=use_data.stu_contact 
+            password1=use_data.stu_password
+            print(email1,name1,contact1,password1)
+            if password1==password:
+                data={
+                    'nm':name1,
+                    'em':email1,
+                    'con':contact1,
+                    'pas':password1
+                }
+                return render(request,'dashboard.html',data)
+            else:
+                msg="You Entered Incorrect Password"
+                return render(request,'login.html',{'msg':msg})
+        else:
+            msg="Email Id not Register"
+            return render(request,'login.html',{'msg':msg})        
+    else:
+        return render(request,'login.html')

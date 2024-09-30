@@ -4,7 +4,7 @@
 </div>
 <hr>
 <div align="center">
-    <form action="">
+    <form action="{% url 'login' %}">
         {% csrf_token %}
         <button>Login</button>
     </form>
