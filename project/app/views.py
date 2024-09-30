@@ -13,10 +13,10 @@ def register(request):
         password=request.POST.get('password')
         cpassword=request.POST.get('cpassword')
         if password==cpassword:
-            user=Student.objects.filter(stu_email=email,stu_name=name)
+            user=Student.objects.filter(stu_email=email)
             print(user)
             if user:
-               msg="Email Alrady Exist"
+               msg="Data Alrady Exist"
                return render(request,'register.html',{'msg':msg})
             else:
               Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
