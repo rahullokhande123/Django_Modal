@@ -84,7 +84,17 @@ def first(requst):
     }
     return render (requst,'dashboard.html',my_data)
 
-
+def last(request):
+    data=Student.objects.last()
+    print(data)
+    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+    my_data={
+        'nm':data.stu_name,
+        'em':data.stu_email,
+        'con':data.stu_contact,
+        'pas':data.stu_password
+    }
+    return render (request,'dashboard.html',my_data)
 
 
 
