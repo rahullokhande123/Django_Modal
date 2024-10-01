@@ -108,3 +108,14 @@ def letest(request):
     }
     return render (request,'dashboard.html',my_data)
 
+def earliast(request):
+    data=Student.objects.earliest("id")
+    print(data)
+    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+    my_data={
+        'nm':data.stu_name,
+        'em':data.stu_email,
+        'con':data.stu_contact,
+        'pas':data.stu_password
+    }
+    return render (request,'dashboard.html',my_data)
