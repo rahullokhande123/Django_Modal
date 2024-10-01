@@ -119,3 +119,10 @@ def earliast(request):
         'pas':data.stu_password
     }
     return render (request,'dashboard.html',my_data)
+
+def exists(request):
+    data = Student.objects.all()
+    print(data.exists())
+    return HttpResponse(data)
+
+

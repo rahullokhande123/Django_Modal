@@ -1,3 +1,7 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
 <h1>{{msg}}</h1>
 <div align="center">
     <a style="text-decoration: none;font-size: 25px;" href="{% url 'register' %}">Registration</a>
@@ -6,22 +10,32 @@
 <div align="center">
     <form action="{% url 'login' %}">
         {% csrf_token %}
-        <button>Login</button>
+        <button type="button" class="btn btn-outline-dark">Login</button>
     </form>
 </div>
+<hr>
+<!-- ================================================================ -->
 
-<div style="" align="center">
-    <a href="{% url 'first' %}"><button style="margin: 10px;background-color: blue;color: white;font-size: 20px;">First</button></a>
+<div style="width: 50%;border: 2px solid black;margin: auto;margin-top: 50px;background-color: lightslategrey;">
+
+    <h1 align="center">QuerySet</h1>
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'first' %}"><button type="button" class="btn btn-outline-success">First</button></a>
 </div>
 
-<div align="center">
-    <a href="{% url 'last' %}"><button style="margin: 10px;background-color: yellow;color: black;font-size: 20px;">Last</button></a>
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'last' %}"><button type="button" class="btn btn-outline-warning">Last</button></a>
 </div>
 
-<div align="center">
-    <a href="{% url 'letest' %}"><button style="margin: 10px;background-color: pink;color: black;font-size: 20px;">Letest</button></a>
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'letest' %}"><button type="button" class="btn btn-outline-info">Letest</button></a>
 </div>
 
-<div align="center">
-    <a href="{% url 'earliast' %}"><button style="margin: 10px;background-color: black;color: white;font-size: 20px;">Earliast</button></a>
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'earliast' %}"><button type="button" class="btn btn-outline-dark">Earliast</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'exists' %}"><button type="button" class="btn btn-outline-warning">Exists</button></a>
+</div>
 </div>

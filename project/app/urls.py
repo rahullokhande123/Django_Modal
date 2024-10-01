@@ -7,5 +7,6 @@ urlpatterns = [
     path('first/', views.first, name='first'),
     path('last/', views.last, name='last'),
     path('letest/', views.letest, name='letest'),
-    path('earliast/', views.earliast, name='earliast')
+    path('earliast/', views.earliast, name='earliast'),
+    path('exists/', views.exists, name='exists')
 ]
