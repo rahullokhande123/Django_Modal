@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Student
 
 # Create your views here.
@@ -31,7 +32,7 @@ def register(request):
             msg="Password not match"
             return render (request,"register.html",{'msg':msg})
 
-        
+    #=======================================================================================================   
         # user=Student.objects.get(stu_email=email)
         # Student.objects.create(stu_name=name,stu_email=email,stu_contact=contact,stu_password=password)
         # msg="DATA SUCCESSFULLY SUBMITED"
@@ -70,3 +71,20 @@ def login(request):
             return render(request,'login.html',{'msg':msg})        
     else:
         return render(request,'login.html')
+    
+def first(requst):
+    data=Student.objects.first()
+    print(data)
+    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+    my_data={
+        'nm':data.stu_name,
+        'em':data.stu_email,
+        'con':data.stu_contact,
+        'pas':data.stu_password
+    }
+    return render (requst,'dashboard.html',my_data)
+
+
+
+
+
