@@ -9,5 +9,6 @@ urlpatterns = [
     path('letest/', views.letest, name='letest'),
     path('earliast/', views.earliast, name='earliast'),
     path('exists/', views.exists, name='exists'),
+    path('create/', views.create, name='create'),
     
 ]
