@@ -149,6 +149,11 @@ def get_or_create(request):
     }
     return render (request,'dashboard.html',my_data)
 
+def update(request):
+    data = Student.objects.filter(id=10).update(stu_name='Ravi Thakur',stu_email='ravithakur@gmail.com',stu_contact=753951748,stu_password=159)
+    
+    return HttpResponse(data)
+
 
 
 
