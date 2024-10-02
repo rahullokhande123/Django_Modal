@@ -15,5 +15,9 @@ urlpatterns = [
     path('delete/', views.delete, name='delete'),
     path('count/', views.count, name='count'),
     path('explain/', views.explain, name='explain'),
-    path('update_or_create/', views.update_or_create, name='update_or_create')
+    path('update_or_create/', views.update_or_create, name='update_or_create'),
+    path('bulk_create/', views.bulk_create, name='bulk_create'),
+    path('fillter_update/', views.fillter_update, name='fillter_update'),
+    path('get_delete/', views.get_delete, name='get_delete'),
+    path('fillter_delete/', views.fillter_delete, name='fillter_delete')
 ]

@@ -150,17 +150,21 @@ def get_or_create(request):
     return render (request,'dashboard.html',my_data)
 
 def update(request):
-    data = Student.objects.filter(id=10).update(stu_name='Ravi Thakur',stu_email='ravithakur@gmail.com',stu_contact=753951748,stu_password=159)
+    data = Student.objects.filter(id=9).update(stu_name='Ravi Thakur',stu_email='ravithakur@gmail.com',stu_contact=753951748,stu_password=159)
     
     return HttpResponse(data)
 
 def delete(request):
     # data = Student.objects.get(id=14).delete() or
-    data = Student.objects.get(id=9)
-    data.delete()
-    # data = Student.objects.filter(stu_name = "Neeraj").delete()
-    # print(data)
-    return HttpResponse(data)
+    data = Student.objects.get(id=11)
+    if data:
+        data.delete()
+        # data = Student.objects.filter(stu_name = "Neeraj").delete()
+        # print(data)
+        return HttpResponse(data)
+    else:
+        msg="This Data does not exist"
+        return render(request, 'home.html', {'msg':msg})
 
 def count(request):
     data=Student.objects.all()
@@ -171,9 +175,30 @@ def explain(request):
     print(data)
 
 def update_or_create(request):
-    data,created = Student.objects.update_or_create(id=10, stu_city="Pune", defaults={'stu_name':"Ravi"})
+    data,created = Student.objects.update_or_create(stu_name='Ravi',stu_email='ravi@gmail.com',stu_contact=753951748,stu_password=596)
     print(data)
     print(created)
     return HttpResponse(data)
     data = Student.objects.all()
     print(data)
+
+def bulk_create(request):
+    data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
+    ])
+    print(data)
+    return HttpResponse(data)
+
+def fillter_update(request):
+    data = Student .objects.filter(id=11).update(stu_name="ravi",stu_email="ravi@gmail.com",stu_city='Mandala')
+    print(data)
+    return HttpResponse(data)
+
+def get_delete(request):
+    # data=Student.objects.get(id=11).delete()
+    data=Student.objects.get(id=11)
+    data.delete()
+    return HttpResponse(data)
+
+def fillter_delete(request):
+    data=Student.objects.filter(id=11).delete()
+    return HttpResponse(data)
