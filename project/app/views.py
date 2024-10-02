@@ -162,6 +162,10 @@ def delete(request):
     # print(data)
     return HttpResponse(data)
 
+def count(request):
+    data=Student.objects.all()
+    print(data.count())
+
 
 
 
