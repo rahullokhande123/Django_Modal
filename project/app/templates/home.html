@@ -16,26 +16,54 @@
 <hr>
 <!-- ================================================================ -->
 
-<div style="width: 50%;border: 2px solid black;margin: auto;margin-top: 50px;background-color: lightslategrey;">
+<div style="width: 50%;border: 2px solid black;margin: auto;margin-top: 50px;background-color: lightslategrey;padding: 40px;">
 
-    <h1 align="center">QuerySet</h1>
+    <h1 style="margin-bottom: 20px;" align="center">QuerySet</h1>
 <div style="margin: 10px;" align="center">
-    <a href="{% url 'first' %}"><button type="button" class="btn btn-outline-success">First</button></a>
+    <a href="{% url 'first' %}"><button type="button" class="btn btn-outline-success">first()</button></a>
 </div>
 
 <div style="margin: 10px;" align="center">
-    <a href="{% url 'last' %}"><button type="button" class="btn btn-outline-warning">Last</button></a>
+    <a href="{% url 'last' %}"><button type="button" class="btn btn-outline-warning">last()</button></a>
 </div>
 
 <div style="margin: 10px;" align="center">
-    <a href="{% url 'letest' %}"><button type="button" class="btn btn-outline-info">Letest</button></a>
+    <a href="{% url 'letest' %}"><button type="button" class="btn btn-outline-info">letest()</button></a>
 </div>
 
 <div style="margin: 10px;" align="center">
-    <a href="{% url 'earliast' %}"><button type="button" class="btn btn-outline-dark">Earliast</button></a>
+    <a href="{% url 'earliast' %}"><button type="button" class="btn btn-outline-dark">earliast()</button></a>
 </div>
 
 <div style="margin: 10px;" align="center">
-    <a href="{% url 'exists' %}"><button type="button" class="btn btn-outline-warning">Exists</button></a>
+    <a href="{% url 'exists' %}"><button type="button" class="btn btn-outline-warning">exists()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'create' %}"><button type="button" class="btn btn-outline-secondary">create()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'get_or_create' %}"><button type="button" class="btn btn-outline-dark">get_or_create()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-primary">update()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'delete' %}"><button type="button" class="btn btn-outline-danger">delete()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'count' %}"><button type="button" class="btn btn-outline-info">count()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'explain' %}"><button type="button" class="btn btn-outline-success">explain()</button></a>
+</div>
+
+<div style="margin: 10px;" align="center">
+    <a href="{% url 'update_or_create' %}"><button type="button" class="btn btn-outline-warning">update_or_create()</button></a>
 </div>
 </div>
