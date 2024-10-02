@@ -137,6 +137,18 @@ def create(request):
     }
     return render (request,'dashboard.html',my_data)
 
+def get_or_create(request):
+    data,created = Student.objects.get_or_create(stu_name='Neeraj Kumar',stu_email='neerajkumar@gmail.com',stu_contact=963852741,stu_password=123)
+    print(data.id, data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+    print(created)
+    my_data={
+        'nm':data.stu_name,
+        'em':data.stu_email,
+        'con':data.stu_contact,
+        'pas':data.stu_password
+    }
+    return render (request,'dashboard.html',my_data)
+
 
 
 
