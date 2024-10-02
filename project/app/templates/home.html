@@ -9,8 +9,8 @@
         top: 0;
         position: sticky;
         z-index: 10;
-       
         background-color: white;
+        margin: 0;
     }
 </style>
 
@@ -35,9 +35,9 @@
 <div align="center" style="display: flex; width: 50%;border: 2px solid black;margin: auto;margin-top: 50px;background-color: lightslategrey;padding: 40px;padding-left: 16%;">
 
     <div>
-        <h1 style="margin-bottom: 20px;display: block;">QuerySet <hr> </h1>
-        <div >
-            <div style="width: 100%;border: 2px solid black;margin: auto;">
+        {% comment %} <!-- <h1 style="margin-bottom: 20px;display: block;">QuerySet <hr> </h1>
+        <div > -->
+            <!-- <div style="width: 100%;border: 2px solid black;margin: auto;">
                 <h5>Single Objects <hr></h5>
 
                 <div style="margin: 10px;" align="center">
@@ -103,10 +103,13 @@
                 <div style="margin: 10px;" align="center">
                     <a href="{% url 'fillter_delete' %}"><button type="button" class="btn btn-outline-success">fillter_delete()</button></a>
                 </div>
-            </div>
+            </div> -->
         
             
-        </div>
+        <!-- </div> --> {% endcomment %}
+
+        <a href="{% url 'all_details' %}"><button>all()</button></a>
+        <a href="{% url 'filter' %}"><button>fillter()</button></a>
     </div>
 
     

@@ -7,3 +7,14 @@
 <h1>{{email}}</h1>
 <h1>{{contact}}</h1>
 <h1>{{password}}</h1> -->
+
+{% for i in data %}
+
+{{i.id}}
+{{i.stu_name}}
+{{i.stu_email}}
+{{i.stu_contact}}
+{{i.stu_password}}
+<br/>
+
+{% endfor %}

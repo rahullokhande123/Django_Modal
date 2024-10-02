@@ -72,133 +72,146 @@ def login(request):
     else:
         return render(request,'login.html')
     
-def first(requst):
-    data=Student.objects.first()
-    print(data)
-    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (requst,'dashboard.html',my_data)
+# def first(requst):
+#     data=Student.objects.first()
+#     print(data)
+#     print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (requst,'dashboard.html',my_data)
 
-def last(request):
-    data=Student.objects.last()
-    print(data)
-    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (request,'dashboard.html',my_data)
+# def last(request):
+#     data=Student.objects.last()
+#     print(data)
+#     print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (request,'dashboard.html',my_data)
 
-def letest(request):
-    data=Student.objects.latest("id")
-    print(data)
-    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (request,'dashboard.html',my_data)
+# def letest(request):
+#     data=Student.objects.latest("id")
+#     print(data)
+#     print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (request,'dashboard.html',my_data)
 
-def earliast(request):
-    data=Student.objects.earliest("id")
-    print(data)
-    print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (request,'dashboard.html',my_data)
+# def earliast(request):
+#     data=Student.objects.earliest("id")
+#     print(data)
+#     print(data.id,data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (request,'dashboard.html',my_data)
 
-def exists(request):
-    data = Student.objects.all()
-    print(data.exists())
-    return HttpResponse(data)
+# def exists(request):
+#     data = Student.objects.all()
+#     print(data.exists())
+#     return HttpResponse(data)
 
 
-def create(request):
-    data = Student.objects.create(stu_name='Ramkumar',stu_email='ramkumar@gmail.com',stu_contact=852741963,stu_password=789)
-    print(data.id, data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (request,'dashboard.html',my_data)
+# def create(request):
+#     data = Student.objects.create(stu_name='Ramkumar',stu_email='ramkumar@gmail.com',stu_contact=852741963,stu_password=789)
+#     print(data.id, data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (request,'dashboard.html',my_data)
 
-def get_or_create(request):
-    data,created = Student.objects.get_or_create(stu_name='Neeraj Kumar',stu_email='neerajkumar@gmail.com',stu_contact=963852741,stu_password=123)
-    print(data.id, data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
-    print(created)
-    my_data={
-        'nm':data.stu_name,
-        'em':data.stu_email,
-        'con':data.stu_contact,
-        'pas':data.stu_password
-    }
-    return render (request,'dashboard.html',my_data)
+# def get_or_create(request):
+#     data,created = Student.objects.get_or_create(stu_name='Neeraj Kumar',stu_email='neerajkumar@gmail.com',stu_contact=963852741,stu_password=123)
+#     print(data.id, data.stu_name,data.stu_email,data.stu_contact,data.stu_password)
+#     print(created)
+#     my_data={
+#         'nm':data.stu_name,
+#         'em':data.stu_email,
+#         'con':data.stu_contact,
+#         'pas':data.stu_password
+#     }
+#     return render (request,'dashboard.html',my_data)
 
-def update(request):
-    data = Student.objects.filter(id=9).update(stu_name='Ravi Thakur',stu_email='ravithakur@gmail.com',stu_contact=753951748,stu_password=159)
+# def update(request):
+#     data = Student.objects.filter(id=9).update(stu_name='Ravi Thakur',stu_email='ravithakur@gmail.com',stu_contact=753951748,stu_password=159)
     
-    return HttpResponse(data)
+#     return HttpResponse(data)
 
-def delete(request):
-    # data = Student.objects.get(id=14).delete() or
-    data = Student.objects.get(id=11)
-    if data:
-        data.delete()
-        # data = Student.objects.filter(stu_name = "Neeraj").delete()
-        # print(data)
-        return HttpResponse(data)
-    else:
-        msg="This Data does not exist"
-        return render(request, 'home.html', {'msg':msg})
+# def delete(request):
+#     # data = Student.objects.get(id=14).delete() or
+#     data = Student.objects.filter(id=11)
+#     if data:
+#         data.delete()
+#         # data = Student.objects.filter(stu_name = "Neeraj").delete()
+#         # print(data)
+#         return HttpResponse(data)
+#     else:
+#         msg="This Data does not exist"
+#         return render(request, 'home.html', {'msg':msg})
 
-def count(request):
-    data=Student.objects.all()
-    print(data.count())
+# def count(request):
+#     data=Student.objects.all()
+#     print(data.count())
 
-def explain(request):
-    data = Student.objects.explain()
+# def explain(request):
+#     data = Student.objects.explain()
+#     print(data)
+
+# def update_or_create(request):
+#     data,created = Student.objects.update_or_create(stu_name='Ravi',stu_email='ravi@gmail.com',stu_contact=753951748,stu_password=596)
+#     print(data)
+#     print(created)
+#     return HttpResponse(data)
+#     data = Student.objects.all()
+#     print(data)
+
+# def bulk_create(request):
+#     data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
+#     ])
+#     print(data)
+#     return HttpResponse(data)
+
+# def fillter_update(request):
+#     data = Student .objects.filter(id=11).update(stu_name="ravi",stu_email="ravi@gmail.com",stu_city='Mandala')
+#     print(data)
+#     return HttpResponse(data)
+
+# def get_delete(request):
+#     # data=Student.objects.get(id=11).delete()
+#     data=Student.objects.get(id=11)
+#     data.delete()
+#     return HttpResponse(data)
+
+# def fillter_delete(request):
+#     data=Student.objects.filter(id=11).delete()
+#     return HttpResponse(data)
+
+def all_details(request):
+    data=Student.objects.all().values()
     print(data)
-
-def update_or_create(request):
-    data,created = Student.objects.update_or_create(stu_name='Ravi',stu_email='ravi@gmail.com',stu_contact=753951748,stu_password=596)
     print(data)
-    print(created)
-    return HttpResponse(data)
-    data = Student.objects.all()
-    print(data)
+    return render (request,'dashboard.html',{'data':data})
 
-def bulk_create(request):
-    data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
-    ])
-    print(data)
-    return HttpResponse(data)
+def filter(request):
+    data=Student.objects.filter(stu_name='Rahul Lokhande')
+    print(data.values)
+    return render (request,'dashboard.html',{'data':data})
 
-def fillter_update(request):
-    data = Student .objects.filter(id=11).update(stu_name="ravi",stu_email="ravi@gmail.com",stu_city='Mandala')
-    print(data)
-    return HttpResponse(data)
 
-def get_delete(request):
-    # data=Student.objects.get(id=11).delete()
-    data=Student.objects.get(id=11)
-    data.delete()
-    return HttpResponse(data)
-
-def fillter_delete(request):
-    data=Student.objects.filter(id=11).delete()
-    return HttpResponse(data)
