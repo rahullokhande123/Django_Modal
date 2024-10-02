@@ -166,6 +166,8 @@ def count(request):
     data=Student.objects.all()
     print(data.count())
 
-
+def explain(request):
+    data = Student.objects.explain()
+    print(data)
 
 
