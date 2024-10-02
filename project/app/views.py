@@ -154,6 +154,14 @@ def update(request):
     
     return HttpResponse(data)
 
+def delete(request):
+    # data = Student.objects.get(id=14).delete() or
+    data = Student.objects.get(id=9)
+    data.delete()
+    # data = Student.objects.filter(stu_name = "Neeraj").delete()
+    # print(data)
+    return HttpResponse(data)
+
 
 
 

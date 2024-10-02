@@ -12,5 +12,6 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('get_or_create/', views.get_or_create, name='get_or_create'),
     path('update/', views.update, name='update'),
-   
+    path('delete/', views.delete, name='delete'),
+    
 ]
