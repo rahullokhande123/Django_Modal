@@ -170,4 +170,10 @@ def explain(request):
     data = Student.objects.explain()
     print(data)
 
-
+def update_or_create(request):
+    data,created = Student.objects.update_or_create(id=10, stu_city="Pune", defaults={'stu_name':"Ravi"})
+    print(data)
+    print(created)
+    return HttpResponse(data)
+    data = Student.objects.all()
+    print(data)
