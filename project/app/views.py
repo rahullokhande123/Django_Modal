@@ -239,8 +239,12 @@ def login(request):
 #     print(data)
 #     return render (request, 'dashboard.html', {'data':data})
 
-def rendom(request):
-    data=Student.objects.order_by("?")
+# def rendom(request):
+#     data=Student.objects.order_by("?")
+#     print(data)
+#     return render (request, 'dashboard.html', {'data':data})
+
+def slice(request):
+    data=(Student.objects.all().order_by('-id')[:5])
     print(data)
     return render (request, 'dashboard.html', {'data':data})
-
