@@ -234,10 +234,13 @@ def login(request):
 #     print(data)
 #     return render (request, 'dashboard.html', {'data':data})
 
-def decending2(request):
-    data=Student.objects.order_by('-stu_name')
+# def decending2(request):
+#     data=Student.objects.order_by('-stu_name')
+#     print(data)
+#     return render (request, 'dashboard.html', {'data':data})
+
+def rendom(request):
+    data=Student.objects.order_by("?")
     print(data)
     return render (request, 'dashboard.html', {'data':data})
-
-
 
