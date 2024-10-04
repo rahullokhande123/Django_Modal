@@ -218,13 +218,16 @@ def login(request):
 #     print(data.values)
 #     return render (request,'dashboard.html',{'data':data})
 
-def exclude(request):
-    data=Student.objects.exclude(stu_name='Rahul Lokhande')
+# def exclude(request):
+#     data=Student.objects.exclude(stu_name='Rahul Lokhande')
+#     print(data)
+#     return render (request, 'dashboard.html', {'data':data})
+# #  Ye name vala data chodh ke baki sab data aayega
+
+def assending(request):
+    data=Student.objects.order_by('stu_name')
     print(data)
     return render (request, 'dashboard.html', {'data':data})
-#  Ye name vala data chodh ke baki sab data aayega
-
-
 
 
 
