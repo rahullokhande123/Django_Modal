@@ -21,6 +21,13 @@ urlpatterns = [
     # path('get_delete/', views.get_delete, name='get_delete'),
     # path('fillter_delete/', views.fillter_delete, name='fillter_delete'),
 
-    path('all_details/', views.all_details, name='all_details'),
-    path('filter/', views.filter, name='filter')
+    # path('all_details/', views.all_details, name='all_details'),
+    # path('filter/', views.filter, name='filter'),
+    path('exclude/', views.exclude, name='exclude'),
+    path('assending/', views.assending, name='assending'),
+    path('decending/', views.decending, name='decending'),
+    path('decending2/', views.decending2, name='decending2'),
+    path('rendom/', views.rendom, name='rendom'),
+    path('slice/', views.slice, name='slice')
+
 ]

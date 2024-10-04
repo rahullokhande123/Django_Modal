@@ -108,8 +108,15 @@
             
         <!-- </div> --> {% endcomment %}
 
-        <a href="{% url 'all_details' %}"><button>all()</button></a>
+        {% comment %} <a href="{% url 'all_details' %}"><button>all()</button></a>
         <a href="{% url 'filter' %}"><button>fillter()</button></a>
+        <a href="{% url 'exclude' %}"><button>exclude()</button></a>
+
+        <a href="{% url 'assending' %}"><button>assending()</button></a>
+        <a href="{% url 'decending' %}"><button>decending()</button></a>
+        <a href="{% url 'decending2' %}"><button>decending2()</button></a>
+        <a href="{% url 'rendom' %}"><button>rendom()</button></a> {% endcomment %}
+        <a href="{% url 'slice' %}"><button>slice()</button></a>
     </div>
 
     

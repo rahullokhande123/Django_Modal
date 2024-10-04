@@ -71,7 +71,9 @@ def login(request):
             return render(request,'login.html',{'msg':msg})        
     else:
         return render(request,'login.html')
-    
+
+# ====================== Single Objects ======================= 
+  
 # def first(requst):
 #     data=Student.objects.first()
 #     print(data)
@@ -203,15 +205,26 @@ def login(request):
 #     data=Student.objects.filter(id=11).delete()
 #     return HttpResponse(data)
 
-def all_details(request):
-    data=Student.objects.all().values()
-    print(data)
-    print(data)
-    return render (request,'dashboard.html',{'data':data})
+# ====================== Multipal Objects ======================= 
 
-def filter(request):
-    data=Student.objects.filter(stu_name='Rahul Lokhande')
-    print(data.values)
-    return render (request,'dashboard.html',{'data':data})
+# def all_details(request):
+#     data=Student.objects.all().values()
+#     print(data)
+#     print(data)
+#     return render (request,'dashboard.html',{'data':data})
+
+# def filter(request):
+#     data=Student.objects.filter(stu_name='Rahul Lokhande')
+#     print(data.values)
+#     return render (request,'dashboard.html',{'data':data})
+
+
+
+
+
+
+
+
+
 
 
