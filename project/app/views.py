@@ -224,12 +224,15 @@ def login(request):
 #     return render (request, 'dashboard.html', {'data':data})
 # #  Ye name vala data chodh ke baki sab data aayega
 
-def assending(request):
-    data=Student.objects.order_by('stu_name')
+# def assending(request):
+#     data=Student.objects.order_by('stu_name')
+#     print(data)
+#     return render (request, 'dashboard.html', {'data':data})
+
+def decending(request):
+    data=Student.objects.order_by('stu_name').reverse()
     print(data)
     return render (request, 'dashboard.html', {'data':data})
-
-
 
 
 
