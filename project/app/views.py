@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Student
+from .models import Query
 
 # Create your views here.
 def home(request):
@@ -246,5 +247,22 @@ def login(request):
 
 def slice(request):
     data=(Student.objects.all().order_by('-id')[:5])
+    # data=(Student.objects.order_by('id').reverse()[:5])
     print(data)
     return render (request, 'dashboard.html', {'data':data})
+
+def query(request):
+    if request.method=="POST":
+        name1=request.POST.get('name')
+        email1=request.POST.get('email')
+        query1=request.POST.get('query')
+
+        print(name1,email1,query1)
+
+        Query.objects.create(name=name1, email=email1, query=query1)
+    
+    else:
+        return render(request, 'dashboard.html')
+        
+
+

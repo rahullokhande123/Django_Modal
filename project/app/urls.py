@@ -23,11 +23,12 @@ urlpatterns = [
 
     # path('all_details/', views.all_details, name='all_details'),
     # path('filter/', views.filter, name='filter'),
-    path('exclude/', views.exclude, name='exclude'),
-    path('assending/', views.assending, name='assending'),
-    path('decending/', views.decending, name='decending'),
-    path('decending2/', views.decending2, name='decending2'),
-    path('rendom/', views.rendom, name='rendom'),
-    path('slice/', views.slice, name='slice')
+    # path('exclude/', views.exclude, name='exclude'),
+    # path('assending/', views.assending, name='assending'),
+    # path('decending/', views.decending, name='decending'),
+    # path('decending2/', views.decending2, name='decending2'),
+    # path('rendom/', views.rendom, name='rendom'),
+    path('slice/', views.slice, name='slice'),
+    path('query/', views.query, name='query')
 
 ]

@@ -1,20 +1,49 @@
-<h3 align="center">Name : {{nm}}</h3>
-<h3 align="center">Email : {{em}}</h3>
-<h3 align="center">Contact : {{con}}</h3>
-<h3 align="center">Password : {{pas}}</h3>
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <h3 style="margin-left: 70%;" align="center">Name : {{nm}}</h3>
+        </div>
+    </nav>
 
-<!-- <h1>{{name}}</h1>
-<h1>{{email}}</h1>
-<h1>{{contact}}</h1>
-<h1>{{password}}</h1> -->
-
-{% for i in data %}
-
-{{i.id}}
-{{i.stu_name}}
-{{i.stu_email}}
-{{i.stu_contact}}
-{{i.stu_password}}
-<br/>
-
-{% endfor %} 
+    <div style="display: flex;">
+        <div style="margin-left: 20%;">
+            <h1>Query Form</h1>
+            <form  action="{% url 'query' %}" method="post">
+            {% csrf_token %}
+                Name:<input style="margin-bottom: 20px;" type="text" name="name" readonly="readonly" value={{nm}} required /> <br>
+                Email:<input style="margin-bottom: 20px;" type="email" readonly="readonly" name="email" value={{em}} required /> <br>
+                Query:<input style="margin-bottom: 20px;width: 100px; height: 50px;" type="text"  name="query" required /> <br>
+                <button>Query</button>
+            </form>
+        </div>
+    
+        
+    </div>
+    <!-- <h3 align="center">Email : {{em}}</h3>
+    <h3 align="center">Contact : {{con}}</h3>
+    <h3 align="center">Password : {{pas}}</h3> -->
+    
+    <!-- <h1>{{name}}</h1>
+    <h1>{{email}}</h1>
+    <h1>{{contact}}</h1>
+    <h1>{{password}}</h1> -->
+    
+    {% for i in data %}
+    
+    {{i.id}}
+    {{i.stu_name}}
+    {{i.stu_email}}
+    {{i.stu_contact}}
+    {{i.stu_password}}
+    <br/>
+    {% endfor %}
+</body>
+</html> 
