@@ -259,8 +259,10 @@ def query(request):
 
         print(name1,email1,query1)
 
+        Query.objects.create(name=name1, email=email1, query=query1)
+    
+    else:
+        return render(request, 'dashboard.html')
         
-    
-    
 
 
