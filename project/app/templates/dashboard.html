@@ -36,7 +36,16 @@
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-                
+                {% for i in key1 %}
+                <tr>
+                    <td >{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.query}}</td>
+                    <td><a href="#"><button>Edit</button></a></td>
+                    <td><a href="#"><button>Delete</button></a></td>
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
