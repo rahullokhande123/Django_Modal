@@ -260,7 +260,16 @@ def query(request):
         print(name1,email1,query1)
 
         Query.objects.create(name=name1, email=email1, query=query1)
-        
+        data=Student.objects.get(stu_email=email1)
+        my_data={
+            'nm':data.stu_name,
+            'em':data.stu_email,
+            'con':data.stu_contact,
+            'pas':data.stu_password
+        }
+        print(my_data)
+        all_query=Query.objects.filter(email=email1)
+        return render(request, 'dashboard.html',{'key1':all_query,'data':my_data})
     else:
         return render(request, 'dashboard.html')
         
