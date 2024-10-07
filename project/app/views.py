@@ -63,7 +63,7 @@ def login(request):
                     'con':contact1,
                     'pas':password1
                 }
-                return render(request,'dashboard.html',data)
+                return render(request,'dashboard.html',{'data':data})
             else:
                 msg="You Entered Incorrect Password"
                 return render(request,'login.html',{'msg':msg})
@@ -259,8 +259,8 @@ def query(request):
 
         print(name1,email1,query1)
 
-        Query.objects.create(name=name1, email=email1, query=query1)
-    
+        
+        
     else:
         return render(request, 'dashboard.html')
         

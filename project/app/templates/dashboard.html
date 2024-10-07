@@ -9,7 +9,7 @@
 <body>
     <nav>
         <div>
-            <h3 style="margin-left: 70%;" align="center">Name : {{nm}}</h3>
+            <h3 style="margin-left: 70%;" align="center">Name : {{data.nm}}</h3>
         </div>
     </nav>
 
@@ -18,8 +18,8 @@
             <h1>Query Form</h1>
             <form  action="{% url 'query' %}" method="post">
             {% csrf_token %}
-                Name:<input style="margin-bottom: 20px;" type="text" name="name" readonly="readonly" value={{nm}} required /> <br>
-                Email:<input style="margin-bottom: 20px;" type="email" readonly="readonly" name="email" value={{em}} required /> <br>
+                Name:<input style="margin-bottom: 20px;" type="text" name="name" readonly="readonly" value={{data.nm}} required /> <br>
+                Email:<input style="margin-bottom: 20px;" type="email" readonly="readonly" name="email" value={{data.em}} required /> <br>
                 Query:<input style="margin-bottom: 20px;width: 100px; height: 50px;" type="text"  name="query" required /> <br>
                 <button>Query</button>
             </form>
@@ -27,23 +27,16 @@
     
         <div style="margin-left: 20%;">
             <h1>Query Data </h1>
-            <table border="1">
-                <tr>
-                    <th>No.</th>
+            <table border="1" >
+                <tr style="padding: 10px;">
+                    <th style="padding: 10px;">No.</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Query</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                
             </table>
         </div>
     </div>
@@ -56,7 +49,7 @@
     <h1>{{contact}}</h1>
     <h1>{{password}}</h1> -->
     
-    {% for i in data %}
+    {% for i in my_data %}
     
     {{i.id}}
     {{i.stu_name}}
