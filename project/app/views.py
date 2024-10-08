@@ -295,7 +295,13 @@ def edit(request, x):
             'pas':data.stu_password
         }
     all_query=Query.objects.filter(email=email)
-    
+    print(all_query)
+    edit_data={
+        'nm':name,
+        'em':email,
+        'qu':query
+    }
+    print(edit_data)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data,'edit':edit_data })
 
 
