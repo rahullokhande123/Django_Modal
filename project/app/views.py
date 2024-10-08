@@ -63,7 +63,8 @@ def login(request):
                     'con':contact1,
                     'pas':password1
                 }
-                return render(request,'dashboard.html',{'data':data})
+                all_query=Query.objects.filter(email=email1)
+                return render(request,'dashboard.html',{'key1':all_query,'data':data})
             else:
                 msg="You Entered Incorrect Password"
                 return render(request,'login.html',{'msg':msg})
@@ -273,5 +274,20 @@ def query(request):
     else:
         return render(request, 'dashboard.html')
         
+# def delete(request,pk):
+#     data=Query.objects.get(id=pk)
+#     email=data.email
+#     data.delete()
+#     all_data
+#     return render(request, 'dashboard.html')
+
+def edit(request, x):
+    user_data=Query.objects.get(id=x)
+    email=user_data.email
+    name=user_data.name
+    query=user_data.query
+    print(query)
+    
+    return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data,'edit':edit_data })
 
 

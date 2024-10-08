@@ -29,6 +29,8 @@ urlpatterns = [
     # path('decending2/', views.decending2, name='decending2'),
     # path('rendom/', views.rendom, name='rendom'),
     path('slice/', views.slice, name='slice'),
-    path('query/', views.query, name='query')
+    path('query/', views.query, name='query'),
+    path('edit/<int:x>', views.edit, name='edit'),
+    # path('delete/<int:pk>', views.delete, name='delete')
 
 ]
