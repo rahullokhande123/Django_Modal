@@ -16,16 +16,7 @@
     <div style="display: flex;">
         {% if edit %}
         {{edit}}
-        <div style="margin-left: 20%;">
-            <h1>Query Form</h1>
-            <form  action="{% url 'query' %}" method="post">
-            {% csrf_token %}
-                Name:<input style="margin-bottom: 20px;" type="text" name="name"  value={{edit.nm}} required /> <br>
-                Email:<input style="margin-bottom: 20px;" type="email"  name="email" value={{edit.em}} required /> <br>
-                Query:<input style="margin-bottom: 20px;" type="text"  name="text" value={{edit.qu}} required /> <br>
-                <button>update</button>
-            </form>
-        </div>
+        
         
         {% else %}
         <div style="margin-left: 20%;">
