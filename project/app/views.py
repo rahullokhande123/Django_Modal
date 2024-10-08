@@ -287,6 +287,14 @@ def edit(request, x):
     name=user_data.name
     query=user_data.query
     print(query)
+    data=Student.objects.get(stu_email=email)
+    my_data={
+            'nm':data.stu_name,
+            'em':data.stu_email,
+            'con':data.stu_contact,
+            'pas':data.stu_password
+        }
+    all_query=Query.objects.filter(email=email)
     
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data,'edit':edit_data })
 
