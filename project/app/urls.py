@@ -31,6 +31,6 @@ urlpatterns = [
     path('slice/', views.slice, name='slice'),
     path('query/', views.query, name='query'),
     path('edit/<int:x>', views.edit, name='edit'),
-    
+    # path('delete/<int:pk>', views.delete, name='delete')
 
 ]
