@@ -283,6 +283,7 @@ def query(request):
 
 def edit(request, x):
     user_data=Query.objects.get(id=x)
+    id1 = user_data.id
     email=user_data.email
     name=user_data.name
     query=user_data.query
@@ -297,11 +298,15 @@ def edit(request, x):
     all_query=Query.objects.filter(email=email)
     print(all_query)
     edit_data={
+        'id':id1,
         'nm':name,
         'em':email,
         'qu':query
     }
     print(edit_data)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data,'edit':edit_data })
+
+
+
 
 

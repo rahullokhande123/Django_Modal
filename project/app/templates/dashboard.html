@@ -18,11 +18,12 @@
         {{edit}}
         <div style="margin-left: 20%;">
             <h1>Query Form</h1>
-            <form  action="{% url 'query' %}" method="post">
+            <form  action="{% url 'update' x=edit.id %}" x=edit.id method="post">
             {% csrf_token %}
+            {{edit.id}}
                 Name:<input style="margin-bottom: 20px;" type="text" name="name"  value={{edit.nm}} required /> <br>
                 Email:<input style="margin-bottom: 20px;" type="email"  name="email" value={{edit.em}} required /> <br>
-                Query:<input style="margin-bottom: 20px;" type="text"  name="text" value={{edit.qu}} required /> <br>
+                Query:<input style="margin-bottom: 20px;" type="text"  name="query" value={{edit.qu}} required /> <br>
                 <button>update</button>
             </form>
         </div>
