@@ -314,6 +314,12 @@ def update(request,x):
         email1=request.POST['email']
         query1=request.POST['query']
         print(name1,email1,query1,x)
+        
+       
+        
+        
+        
+    return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
 
 
 
