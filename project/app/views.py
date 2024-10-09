@@ -327,7 +327,7 @@ def update(request,x):
             'con':data.stu_contact,
             'pas':data.stu_password
         }
-        
+        all_query=Query.objects.filter(email=email1)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
 
 
