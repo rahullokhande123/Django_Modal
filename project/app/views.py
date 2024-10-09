@@ -321,7 +321,12 @@ def update(request,x):
 
         oldData.save()
         data=Student.objects.get(stu_email=email1)
-        
+        my_data={
+            'nm':data.stu_name,
+            'em':data.stu_email,
+            'con':data.stu_contact,
+            'pas':data.stu_password
+        }
         
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
 
