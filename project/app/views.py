@@ -315,7 +315,11 @@ def update(request,x):
         query1=request.POST['query']
         print(name1,email1,query1,x)
         
-       
+        oldData.name=name1
+        oldData.email=email1
+        oldData.query=query1
+
+        oldData.save()
         
         
         
