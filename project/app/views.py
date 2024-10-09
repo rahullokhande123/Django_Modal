@@ -306,7 +306,14 @@ def edit(request, x):
     print(edit_data)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data,'edit':edit_data })
 
-
+def update(request,x):
+    if request.method=="POST":
+        oldData=Query.objects.get(id=x)
+        
+        name1=request.POST['name']
+        email1=request.POST['email']
+        query1=request.POST['query']
+        print(name1,email1,query1,x)
 
 
 
