@@ -322,7 +322,9 @@ def update(request,x):
         all_query=Query.objects.filter(email=email1)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
 
-def delete(request,x,):
+def delete(request,x,y):
+        Querydata=Query.objects.filter(id=x)
+        if Querydata:
             Querydata=Query.objects.get(id=x)
             name1=Querydata.name
             email1=Querydata.email
@@ -339,8 +341,17 @@ def delete(request,x,):
             }
             all_query=Query.objects.filter(email=email1)
             return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
-       
-            
+        else:
+            # print(y)
+            data=Student.objects.get(stu_email=y)
+            my_data={
+                'nm':data.stu_name,
+                'em':data.stu_email,
+                'con':data.stu_contact,
+                'pas':data.stu_password
+            }
+            all_query=Query.objects.filter(email=y)
+            return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
     
 
 
