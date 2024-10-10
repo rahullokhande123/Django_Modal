@@ -353,5 +353,6 @@ def delete(request,x,y):
             all_query=Query.objects.filter(email=y)
             return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
     
-
+def logout(request):
+    return render(request,'login.html')
 

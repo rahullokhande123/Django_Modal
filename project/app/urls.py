@@ -34,5 +34,5 @@ urlpatterns = [
     path('update/<int:x>', views.update, name='update'),
     # path('delete/<int:x>', views.delete, name='delete')
     path('delete/<int:x>/<str:y>', views.delete, name='delete'),
-    
+    path('logout/', views.logout, name='logout'),
 ]
