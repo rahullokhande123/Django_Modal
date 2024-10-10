@@ -273,20 +273,13 @@ def query(request):
         return render(request, 'dashboard.html',{'key1':all_query,'data':my_data})
     else:
         return render(request, 'dashboard.html')
-        
-# def delete(request,pk):
-#     data=Query.objects.get(id=pk)
-#     email=data.email
-#     data.delete()
-#     all_data
-#     return render(request, 'dashboard.html')
 
 def edit(request, x):
-    user_data=Query.objects.get(id=x)
-    id1 = user_data.id
-    email=user_data.email
-    name=user_data.name
-    query=user_data.query
+    user_QueryData=Query.objects.get(id=x)
+    id1 = user_QueryData.id
+    email=user_QueryData.email
+    name=user_QueryData.name
+    query=user_QueryData.query
     print(query)
     data=Student.objects.get(stu_email=email)
     my_data={
@@ -295,7 +288,7 @@ def edit(request, x):
             'con':data.stu_contact,
             'pas':data.stu_password
         }
-    all_query=Query.objects.filter(email=email)
+    all_query=Query.objects.filter(email=email) 
     print(all_query)
     edit_data={
         'id':id1,
@@ -308,13 +301,12 @@ def edit(request, x):
 
 def update(request,x):
     if request.method=="POST":
-        oldData=Query.objects.get(id=x)
-        
         name1=request.POST['name']
         email1=request.POST['email']
         query1=request.POST['query']
         print(name1,email1,query1,x)
-        
+
+        oldData=Query.objects.get(id=x)
         oldData.name=name1
         oldData.email=email1
         oldData.query=query1
@@ -330,5 +322,25 @@ def update(request,x):
         all_query=Query.objects.filter(email=email1)
     return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
 
+def delete(request,x,):
+            Querydata=Query.objects.get(id=x)
+            name1=Querydata.name
+            email1=Querydata.email
+            query1=Querydata.query
+
+            Querydata.delete()
+
+            data=Student.objects.get(stu_email=email1)
+            my_data={
+                'nm':data.stu_name,
+                'em':data.stu_email,
+                'con':data.stu_contact,
+                'pas':data.stu_password
+            }
+            all_query=Query.objects.filter(email=email1)
+            return render(request, 'dashboard.html', {'key1':all_query, 'data':my_data })
+       
+            
+    
 
 

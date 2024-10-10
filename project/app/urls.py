@@ -32,6 +32,7 @@ urlpatterns = [
     path('query/', views.query, name='query'),
     path('edit/<int:x>', views.edit, name='edit'),
     path('update/<int:x>', views.update, name='update'),
-    # path('delete/<int:pk>', views.delete, name='delete')
-
+    # path('delete/<int:x>', views.delete, name='delete')
+    
+    
 ]
