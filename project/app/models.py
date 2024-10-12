@@ -6,8 +6,6 @@ class Student(models.Model):
     stu_email=models.EmailField()
     stu_contact=models.IntegerField()
     stu_password=models.CharField(max_length=25)
-    stu_image = models.ImageField(upload_to='image/')
-    stu_resume = models.FileField(upload_to='file/')
 
     def __str__(self):
        return self.stu_name
