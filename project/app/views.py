@@ -355,16 +355,3 @@ def delete(request,x,y):
     
 def logout(request):
     return render(request,'login.html')
-
-def home(request):
-    form = Student()
-    msg = "Student Registration Page"
-    if request.method=='POST':
-        form = Student(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            msg = "Registration succsessfully"
-        else:
-            msg = "Please enter proper data"
-
-    return render(request,'home.html',{'form':form,'msg':msg})
