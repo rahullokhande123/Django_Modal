@@ -368,8 +368,3 @@ def home(request):
             msg = "Please enter proper data"
 
     return render(request,'home.html',{'form':form,'msg':msg})
-
-def show(request):
-    data1 = Student.objects.all()
-    data = data1.values()
-    return render(request,'show.html',{'data':data})
